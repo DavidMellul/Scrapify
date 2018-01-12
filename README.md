@@ -47,7 +47,7 @@ Add a new **endpoint** to the API, identified by :
  - A **link** *optional* string. If not provided, the API will use the default endpoint.  It is the URL of the webpage you want to scrap.<br />
 Returns nothing.
 
-		update_endpoint(identifier,selector,link)
+	update_endpoint(identifier,selector,link)
 
 It's just a shorthand for **register_endpoint** when an endpoint exists already. <br />
 Returns nothing.
