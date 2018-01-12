@@ -2,6 +2,8 @@
 
 A python library that allows dead easy web scraping with 3 lines of code.
 
+Just copy-paste Scrapify.py with the required dependencies to start using it in your project <3
+
 ## How it works
 
 Scrapify relies on lxml and Requests to crawl web pages and return a JSON representation of what is demanded.
