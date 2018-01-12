@@ -1,5 +1,6 @@
 import json
 import requests
+from unidecode import unidecode
 from lxml import etree
 from lxml.cssselect import CSSSelector
 from lxml.html import fromstring
@@ -63,17 +64,17 @@ class API:
         elements = self.crawl_page(endpoint['link'], endpoint['selector'])
         for e in elements:
             api_object = {
-                'properties': {attr: (e.attrib[attr]) for attr in e.attrib},
-                'text': (e.text_content().strip()),
+                'properties': {attr: unidecode(e.attrib[attr]) for attr in e.attrib},
+                'text': unidecode(e.text_content().strip()),
                 'tag': e.tag.strip(),
-                'html': (str(etree.tostring(e, pretty_print=True)))
+                'html': unidecode(str(etree.tostring(e, pretty_print=True)))
             }
             if (filter is None) or len(filter) == 0 or (
                         any(i.lower() in api_object['text'].lower() for i in filter) and is_filter_including) \
                     or (not (any(i.lower() in api_object['text'].lower() for i in filter)) and not is_filter_including):
                 data[identifier]['content'].append(api_object)
 
-        return json.loads(json.dumps(data, indent=4, ensure_ascii=False))
+        return json.dumps(data, indent=4, ensure_ascii=False)
 
     # Getter for the self endpoints list
     def endpoints_list(self):
