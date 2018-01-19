@@ -34,12 +34,12 @@ Scrapify lets you use those functions : <br />
 	API(default_endpoint)
 	
 Provide the default **link** the API will scrap. <br /> Default value is **None**
-
+	----
     set_default_endpoint(link)
 
 It's just a shorthand for using the **constructor** with a parameter. <br />
 Returns nothing.
-
+	----
     register_endpoint(identifier,selector,link)
 
 Add a new **endpoint** to the API, identified by :
@@ -48,17 +48,18 @@ Add a new **endpoint** to the API, identified by :
  - A **selector** string which is a CSS selector for what you want to retrieve (ex: "li")
  - A **link** *optional* string. If not provided, the API will use the default endpoint.  It is the URL of the webpage you want to scrap.<br />
 Returns nothing.
-
+	----
 	update_endpoint(identifier,selector,link)
 
 It's just a shorthand for **register_endpoint** when an endpoint exists already. <br />
 Returns nothing.
 
+	----
     
     remove_endpoint(identifier)
 
 Remove an **endpoint** registered in the past, identified by an **identifier** string stored already via **register_endpoint**. <br /> Returns nothing.
-
+	----
     request_endpoint(identifier,filter,is_filter_including)
 
 Scrap the webpage identified by the **identifier** provided and the **css selector** you associated the identifer to.
@@ -67,7 +68,7 @@ Scrap the webpage identified by the **identifier** provided and the **css select
 - **is_filter_including** is an *optional* boolean that tells wether your filter will **exclude data or include data** during the scraping process.  Default value is **False**.
 
 Returns a **JSON string** containing the results.
-
+	----
 	endpoint_list()
 Returns the list of all the endpoints registered already.
 
