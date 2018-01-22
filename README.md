@@ -45,7 +45,9 @@ Provide the default **link** the API will scrap. <br /> Default value is **None*
 
 It's just a shorthand for using the **constructor** with a parameter. <br />
 Returns nothing.
-	----
+
+----------
+
     register_endpoint(identifier,selector,link)
 
 Add a new **endpoint** to the API, identified by :
