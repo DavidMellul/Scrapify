@@ -18,14 +18,14 @@ You can set up different endpoints to request those as much as you want.
 
 ## Dependencies
 
-I couldn't manage to upload this library to PyPi. <br />
+If you go through pip install command-line utility, everything will be installed automatically, don't worry. 
 
-For this library to work properly in your project, **it is mandatory that you install those dependencies** :
+Otherwise, **it is required that you install those dependencies** :
  - lxml.
  - requests.
  - unidecode.
- - json.
-
+ - cssselect.
+ 
 ## Usage 
 
 I want to retrieve the video title for each video on the Youtube homepage.
