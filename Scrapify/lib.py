@@ -89,7 +89,11 @@ class API:
     @staticmethod
     def crawl_page(url, selector):
         try:
-            page_content = fromstring(requests.get(url).content)
+            # Fake browser
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
+            }
+            page_content = fromstring(requests.get(url, headers=headers).content)
             filter = CSSSelector(selector)
             return filter(page_content)
         except:
