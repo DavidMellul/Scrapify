@@ -1,0 +1,8 @@
+setup.cfg
+setup.py
+Scrapify/Scrapify.py
+Scrapify.egg-info/PKG-INFO
+Scrapify.egg-info/SOURCES.txt
+Scrapify.egg-info/dependency_links.txt
+Scrapify.egg-info/requires.txt
+Scrapify.egg-info/top_level.txt

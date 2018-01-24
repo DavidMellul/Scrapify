@@ -1,9 +1,14 @@
 
 ## Scrapify
 
-A python library that allows dead easy web scraping with 3 lines of code.
+A simple and intuitive python library that allows dead easy web scraping with 3 lines of code.
 
-Just copy-paste Scrapify.py with the required dependencies to start using it in your project <3
+## Install
+
+    $ pip install scrapify
+
+
+You're good to go :)
 
 ## How it works
 
@@ -25,8 +30,21 @@ For this library to work properly in your project, **it is mandatory that you in
 
 I want to retrieve the video title for each video on the Youtube homepage.
 
-<img src="usage.png" />
-<img src="result.png" />
+
+	from Scrapify import API
+
+	api = API('https://youtube.com')
+	
+	api.register_endpoint('/video_titles', 'li > div > div > div.yt-lockup-content > h3 > a')
+    
+    data = api.request_endpoint('/video_titles')
+
+    print(data)
+
+
+Here is the result:
+
+
 
 # Documentation
 

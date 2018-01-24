@@ -70,7 +70,7 @@ class API:
                 'html': unidecode(str(etree.tostring(e, pretty_print=True)))
             }
             if (filter is None) or len(filter) == 0 or (
-                        any(i.lower() in api_object['text'].lower() for i in filter) and is_filter_including) \
+                    any(i.lower() in api_object['text'].lower() for i in filter) and is_filter_including) \
                     or (not (any(i.lower() in api_object['text'].lower() for i in filter)) and not is_filter_including):
                 data[identifier]['content'].append(api_object)
 
