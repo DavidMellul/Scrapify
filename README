@@ -31,7 +31,7 @@ For this library to work properly in your project, **it is mandatory that you in
 I want to retrieve the video title for each video on the Youtube homepage.
 
 
-	from Scrapify import API
+	from Scrapify.lib import API
 
 	api = API('https://youtube.com')
 	
@@ -117,5 +117,3 @@ Returns the list of all the endpoints registered already.
 # Contribute
 
 Do not hesitate to make pull requests in case there is any kind of bug or missing functionality you would love to see.
-
-Also, if you're a pro with PyPi, feel free to upload this library ! It will ease the install process.  **Contact me before**
