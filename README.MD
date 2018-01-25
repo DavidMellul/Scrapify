@@ -30,60 +30,58 @@ Otherwise, **it is required that you install those dependencies** :
 
 I want to retrieve the video title for each video on the Youtube homepage.
 
+```python
+from Scrapify.lib import API
 
-	from Scrapify.lib import API
+api = API('https://youtube.com')
+api.register_endpoint('/video_titles', 'li > div > div > div.yt-lockup-content > h3 > a')
+data = api.request_endpoint('/video_titles')
 
-	api = API('https://youtube.com')
-	
-	api.register_endpoint('/video_titles', 'li > div > div > div.yt-lockup-content > h3 > a')
-    
-    data = api.request_endpoint('/video_titles')
-
-    print(data)
-
+print(data)
+````
 ----------
 
 Result
-
-    {
-    "/video_titles": {
-        "api_endpoint": {
-            "endpoint": "/video_titles",
-            "selector": "li > div > div > div.yt-lockup-content > h3 > a",
-            "link": "https://youtube.com"
+```json
+{
+"/video_titles": {
+    "api_endpoint": {
+        "endpoint": "/video_titles",
+        "selector": "li > div > div > div.yt-lockup-content > h3 > a",
+        "link": "https://youtube.com"
+    },
+    "content": [
+        {
+            "properties": {
+                "href": "/watch?v=ctIdov01l20",
+                "class": " yt-ui-ellipsis yt-ui-ellipsis-2 yt-uix-sessionlink      spf-link ",
+                "data-sessionlink": "itct=CI4BEJQ1GAAiEwiBgLPU4_DYAhUIEhUKHW4RDX0ojh4yCmctaGlnaC10cnZaD0ZFd2hhdF90b193YXRjaA",
+                "title": "J'AI TROUVA DES CRISTAUX MAGNIFIQUES !",
+                "aria-describedby": "description-id-682299",
+                "dir": "ltr"
+            },
+            "text": "J'AI TROUVA DES CRISTAUX MAGNIFIQUES !",
+            "tag": "a",
+            "html": "b'<a href=\"/watch?v=ctIdov01l20\" class=\" yt-ui-ellipsis yt-ui-ellipsis-2 yt-uix-sessionlink      spf-link \" data-sessionlink=\"itct=CI4BEJQ1GAAiEwiBgLPU4_DYAhUIEhUKHW4RDX0ojh4yCmctaGlnaC10cnZaD0ZFd2hhdF90b193YXRjaA\" title=\"J\\'AI TROUV&#xC3;&#x89; DES CRISTAUX MAGNIFIQUES !\" aria-describedby=\"description-id-682299\" dir=\"ltr\">J\\'AI TROUV&#195;&#137; DES CRISTAUX MAGNIFIQUES !</a>\\n'"
         },
-        "content": [
-            {
-                "properties": {
-                    "href": "/watch?v=ctIdov01l20",
-                    "class": " yt-ui-ellipsis yt-ui-ellipsis-2 yt-uix-sessionlink      spf-link ",
-                    "data-sessionlink": "itct=CI4BEJQ1GAAiEwiBgLPU4_DYAhUIEhUKHW4RDX0ojh4yCmctaGlnaC10cnZaD0ZFd2hhdF90b193YXRjaA",
-                    "title": "J'AI TROUVA DES CRISTAUX MAGNIFIQUES !",
-                    "aria-describedby": "description-id-682299",
-                    "dir": "ltr"
-                },
-                "text": "J'AI TROUVA DES CRISTAUX MAGNIFIQUES !",
-                "tag": "a",
-                "html": "b'<a href=\"/watch?v=ctIdov01l20\" class=\" yt-ui-ellipsis yt-ui-ellipsis-2 yt-uix-sessionlink      spf-link \" data-sessionlink=\"itct=CI4BEJQ1GAAiEwiBgLPU4_DYAhUIEhUKHW4RDX0ojh4yCmctaGlnaC10cnZaD0ZFd2hhdF90b193YXRjaA\" title=\"J\\'AI TROUV&#xC3;&#x89; DES CRISTAUX MAGNIFIQUES !\" aria-describedby=\"description-id-682299\" dir=\"ltr\">J\\'AI TROUV&#195;&#137; DES CRISTAUX MAGNIFIQUES !</a>\\n'"
+        {
+            "properties": {
+                "href": "/watch?v=Pg9pjaGCl0I",
+                "class": " yt-ui-ellipsis yt-ui-ellipsis-2 yt-uix-sessionlink      spf-link ",
+                "data-sessionlink": "itct=CI0BEJQ1GAEiEwiBgLPU4_DYAhUIEhUKHW4RDX0ojh4yCmctaGlnaC10cnZaD0ZFd2hhdF90b193YXRjaA",
+                "title": "Top 10 des CALABRITAS les PLUS DATESTAES !",
+                "aria-describedby": "description-id-917687",
+                "dir": "ltr"
             },
-            {
-                "properties": {
-                    "href": "/watch?v=Pg9pjaGCl0I",
-                    "class": " yt-ui-ellipsis yt-ui-ellipsis-2 yt-uix-sessionlink      spf-link ",
-                    "data-sessionlink": "itct=CI0BEJQ1GAEiEwiBgLPU4_DYAhUIEhUKHW4RDX0ojh4yCmctaGlnaC10cnZaD0ZFd2hhdF90b193YXRjaA",
-                    "title": "Top 10 des CALABRITAS les PLUS DATESTAES !",
-                    "aria-describedby": "description-id-917687",
-                    "dir": "ltr"
-                },
-                "text": "Top 10 des CALABRITAS les PLUS DATESTAES !",
-                "tag": "a",
-                "html": "b'<a href=\"/watch?v=Pg9pjaGCl0I\" class=\" yt-ui-ellipsis yt-ui-ellipsis-2 yt-uix-sessionlink      spf-link \" data-sessionlink=\"itct=CI0BEJQ1GAEiEwiBgLPU4_DYAhUIEhUKHW4RDX0ojh4yCmctaGlnaC10cnZaD0ZFd2hhdF90b193YXRjaA\" title=\"Top 10 des C&#xC3;&#x89;L&#xC3;&#x89;BRIT&#xC3;&#x89;S les PLUS D&#xC3;&#x89;TEST&#xC3;&#x89;ES !\" aria-describedby=\"description-id-917687\" dir=\"ltr\">Top 10 des C&#195;&#137;L&#195;&#137;BRIT&#195;&#137;S les PLUS D&#195;&#137;TEST&#195;&#137;ES !</a>\\n'"
-            },
-            {...}
-            ],
-        }   
-    }
-
+            "text": "Top 10 des CALABRITAS les PLUS DATESTAES !",
+            "tag": "a",
+            "html": "b'<a href=\"/watch?v=Pg9pjaGCl0I\" class=\" yt-ui-ellipsis yt-ui-ellipsis-2 yt-uix-sessionlink      spf-link \" data-sessionlink=\"itct=CI0BEJQ1GAEiEwiBgLPU4_DYAhUIEhUKHW4RDX0ojh4yCmctaGlnaC10cnZaD0ZFd2hhdF90b193YXRjaA\" title=\"Top 10 des C&#xC3;&#x89;L&#xC3;&#x89;BRIT&#xC3;&#x89;S les PLUS D&#xC3;&#x89;TEST&#xC3;&#x89;ES !\" aria-describedby=\"description-id-917687\" dir=\"ltr\">Top 10 des C&#195;&#137;L&#195;&#137;BRIT&#195;&#137;S les PLUS D&#195;&#137;TEST&#195;&#137;ES !</a>\\n'"
+        },
+        {...}
+        ],
+    }   
+}
+```
 
 # Documentation
 
